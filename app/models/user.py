@@ -10,10 +10,17 @@ class User(db.Model, UserMixin):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(50), nullable=False)
+    last_name = db.Column(db.String(50), nullable=False)
     username = db.Column(db.String(40), nullable=False, unique=True)
+    phone = db.Column(db.String(15), nullable=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
-
+    rewards_points = db.Column(db.Integer, default=0)
+    role = db.Column(db.String(20), nullable=True, default='client')
+    
+    quote_requests = db.relationship('QuoteRequest', back_populates='client', lazy=True)
+    
     @property
     def password(self):
         return self.hashed_password
@@ -29,5 +36,9 @@ class User(db.Model, UserMixin):
         return {
             'id': self.id,
             'username': self.username,
-            'email': self.email
+            'email': self.email,
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "phone": self.phone,
+            
         }
