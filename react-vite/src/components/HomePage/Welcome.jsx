@@ -6,7 +6,7 @@ const Welcome = () => {
   const navigate = useNavigate();
 
   const handleBooking = () => {
-    navigate('/book'); // Assuming you have a booking route
+    navigate('/Services'); // Assuming you have a booking route
   }
 
   return (
