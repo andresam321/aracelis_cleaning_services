@@ -19,8 +19,10 @@ class User(db.Model, UserMixin):
     rewards_points = db.Column(db.Integer, default=0)
     role = db.Column(db.String(20), nullable=True, default='client')
     
-    quote_requests = db.relationship('QuoteRequest', back_populates='client', lazy=True)
-    
+    quote_requests = db.relationship('QuoteRequest', back_populates='client',cascade='all, delete-orphan', lazy=True)
+    service = db.relationship("Service",back_populates ="user")
+
+
     @property
     def password(self):
         return self.hashed_password

@@ -19,8 +19,8 @@ class Booking(db.Model):
     # created_at = db.Column(db.DateTime, default=datetime)
     
 
-    service = db.relationship("Service", back_populates = "bookings",cascade='all, delete-orphan')
-    client = db.relationship("User", back_populates="bookings",cascade='all, delete-orphan')
+    # service = db.relationship("Service", back_populates = "bookings",cascade='all, delete-orphan')
+    # client = db.relationship("User", back_populates="bookings",cascade='all, delete-orphan')
 
     def to_dict(self):
         return {

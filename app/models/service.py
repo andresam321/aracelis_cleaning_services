@@ -10,6 +10,7 @@ class Service(db.Model):
         __table_args__ = {'schema': SCHEMA}
         
     id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True) 
     name = db.Column(db.String(100), nullable=False)  # E.g., Property Cleaning
     description = db.Column(db.Text, nullable=True)   # Description of the service
     price = db.Column(db.Float, nullable=True)       # Price of the service
@@ -17,7 +18,7 @@ class Service(db.Model):
     service_type = db.Column(db.String(50), nullable=True)  # Type of service (e.g., 'Property', 'Office')
 
     quote_requests = db.relationship('QuoteRequest', back_populates='service', lazy=True) 
-    
+    user = db.relationship('User', back_populates='service')
 
     def to_dict(self):
         return {

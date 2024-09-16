@@ -9,7 +9,7 @@ class QuoteRequest(db.Model):
         
     id = db.Column(db.Integer, primary_key=True)
     client_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True) 
-    guest_email = db.Column(db.String(255), nullable=False)  
+    guest_email = db.Column(db.String(255), nullable=True)  
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String(50), nullable=False)
     phone = db.Column(db.String(15), nullable=False)
@@ -36,8 +36,8 @@ class QuoteRequest(db.Model):
 
 
     # Relationships
-    client = db.relationship('User', back_populates='quote_requests',cascade='all, delete-orphan')  # Relationship with User
-    service = db.relationship('Service', back_populates='quote_requests',cascade='all, delete-orphan')  # Relationship with Service
+    client = db.relationship('User', back_populates='quote_requests')  # Relationship with User
+    service = db.relationship('Service', back_populates='quote_requests')  # Relationship with Service
 
     def to_dict(self):
         return {
