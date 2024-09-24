@@ -9,7 +9,7 @@ const Welcome = () => {
   const navigate = useNavigate();
 
   const handleBooking = () => {
-    navigate('/Services'); // Assuming you have a booking route
+    navigate('/Services'); 
   }
 
   const sliderSettings = {
@@ -24,14 +24,12 @@ const Welcome = () => {
 
   return (
     <div className="welcome-container">
-      {/* Background Image */}
       <img 
         src="https://res.cloudinary.com/djuzk5um3/image/upload/v1726714544/Screenshot_2024-09-17_at_8.07.42_PM_ekmf1w.png" 
         alt="Background" 
         className="background-image" 
       />
       
-      {/* Main Content Section */}
       <div className="content">
         <h1>Araceli's Cleaning Services</h1>
         <p>Your home deserves the best care.</p>

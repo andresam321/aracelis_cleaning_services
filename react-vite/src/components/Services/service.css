@@ -1,0 +1,113 @@
+
+.services-page {
+    display: flex;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+}
+
+.service-sidebar {
+    width: 25%;
+    background-color: #a1b1c3;
+    padding: 15px;
+    border-right: 1px solid #ddd;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.service-sidebar h2 {
+    font-size: 1.8rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.service-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-sidebar ul li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #0056b3;
+    border: 1px solid #004080;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+    color: white;
+}
+
+.service-sidebar ul li:hover {
+    background-color: #004080;
+    transform: scale(1.03);
+}
+
+.service-sidebar ul li.active {
+    background-color: #ffc107;
+    color: black;
+    font-weight: bold;
+}
+
+.service-details-container {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.service-details {
+    max-width: 650px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
+}
+
+.service-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.service-info {
+    text-align: left;
+}
+
+.service-info h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #007BFF;
+}
+
+.service-info p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+    color: #333;
+}
+
+.quote-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.quote-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}

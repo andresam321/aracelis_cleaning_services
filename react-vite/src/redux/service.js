@@ -21,3 +21,36 @@ const addService = (service) => ({
     payload:service
 })
 
+export const thunkGetAllServices = () => async (dispatch) =>{
+
+    const res = await fetch(`/api/service/all_services`)
+    if (res.ok) {
+        const data = await res.json();
+        // console.log("line 206 Fetched  services:", data);
+        if (data.errors) {
+            return;
+        }
+        await dispatch(getAllServices(data.services))
+    }
+
+}
+
+
+function serviceReducer(state = {}, action) {
+
+    switch(action.type){
+
+        case GET_ALL_SERVICES:{
+            return {
+                ...state,
+                allServices: action.payload
+            }
+
+        }
+        default:
+            return state
+
+    }
+}
+
+export default serviceReducer
