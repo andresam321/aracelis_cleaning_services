@@ -70,6 +70,7 @@ def create_new_quote(service_id):
             description=form.data('description'),
             quoted_price=form.data('quoted_price'),
             status='pending',
+            request_date = form.data("request_date"),
             bedrooms=form.data('bedrooms'),
             half_baths=form.data('half_baths'),
             full_baths=form.data('full_baths'),

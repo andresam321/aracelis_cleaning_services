@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import OpenModalButton from "../OpenModalButton/OpenModalButton"
+import CreateQuote from '../QuoteRequest/CreateQuote';
 import { thunkGetAllServices } from '../../redux/service';
+
 import "./service.css";
 
 const Services = () => {
@@ -53,8 +56,16 @@ const Services = () => {
               <p>Price: To Be Determined</p>
               <p>Description: {selectedService.description}</p>
               <p>Estimated Duration: {selectedService.estimated_duration}</p>
-              <button className="quote-button">Request a Quote</button>
+              <button className="quote-button"> <OpenModalButton
+                buttonText={"Request A Quote"}
+                modalComponent={<CreateQuote/>}
+            /></button>
             </div>
+            {/* <OpenModalButton
+                buttonText={"Request A Quote"}
+                className="view-details-button"
+                modalComponent={<CreateQuote/>}
+            /> */}
           </div>
         )}
       </main>

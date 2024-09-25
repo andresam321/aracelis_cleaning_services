@@ -20,7 +20,7 @@ class QuoteRequest(db.Model):
     description = db.Column(db.Text, nullable=True)  
     quoted_price = db.Column(db.Float, nullable=True)  
     status = db.Column(db.String(20), default='pending')  
-    request_date = db.Column(db.DateTime, default=datetime)
+    request_date = db.Column(db.String, default=datetime)
 
     # Additional fields for cleaning specifications
     bedrooms = db.Column(db.Integer, nullable=True, default=0)
