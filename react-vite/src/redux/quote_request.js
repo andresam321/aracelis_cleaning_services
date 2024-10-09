@@ -17,11 +17,11 @@ const getAllQuotes = (request) => ({
 })
 
 
-export const thunkCreateQuote = (service_id, qr) => async (dispatch) =>{
+export const thunkCreateQuote = (service_id, quote_request) => async (dispatch) =>{
     
     const res = await fetch(`/api/quote_request/${service_id}/new_quote`, {
             method: "POST",
-            body: qr
+            body: quote_request
 
         })
     if (res.ok) {

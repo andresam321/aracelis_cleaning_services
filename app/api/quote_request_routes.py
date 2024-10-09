@@ -51,7 +51,7 @@ def delete_quote_request(quote_id):
 
 #every client able to submit multiple quotes 
 #from different services
-@quote_request_routes.route("/<int:service_id>/new_quote")
+@quote_request_routes.route("/<int:service_id>/new_quote", methods = ["POST"])
 def create_new_quote(service_id):
     form = QuoteRequestForm()
     form["csrf_token"].data = request.cookies["csrf_token"]
