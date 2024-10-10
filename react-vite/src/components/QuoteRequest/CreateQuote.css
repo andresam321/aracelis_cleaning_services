@@ -1,50 +1,34 @@
 .quote-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 500px;
-  margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
-.quote-form label {
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.quote-form input,
-.quote-form textarea {
-  padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-}
-
-.quote-form textarea {
-  resize: vertical;
-  height: 100px;
-}
-
-.quote-form button {
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-}
-
-.quote-form button[type='button'] {
-  background-color: #6c757d;
-  margin-bottom: 10px;
-}
-
-.quote-form button:hover {
-  background-color: #0056b3;
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .additional-fields {
-  margin-top: 15px;
-  padding-top: 15px;
-  border-top: 1px solid #ccc;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.form-row label {
+    flex: 1;
+}
+
+.form-row input, 
+.form-row select {
+    flex: 2;
+}
+
+.additional-fields .form-row {
+    flex: 1 1 48%;
+}
+
+.toggle-additional-fields,
+.submit-quote-button {
+    margin-top: 1rem;
 }

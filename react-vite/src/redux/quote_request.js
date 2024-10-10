@@ -17,23 +17,28 @@ const getAllQuotes = (request) => ({
 })
 
 
-export const thunkCreateQuote = (service_id, quote_request) => async (dispatch) =>{
-    
-    const res = await fetch(`/api/quote_request/${service_id}/new_quote`, {
+export const thunkCreateQuote = (service_id, quote_request) => async (dispatch) => {
+    try {
+        const res = await fetch(`/api/quote_request/${service_id}/new_quote`, {
             method: "POST",
-            body: quote_request
-
-        })
-    if (res.ok) {
-        const data = await res.json();
-        // console.log("line  Fetched  qr:", data);
-        if (data.errors) {
-            return;
+            body: quote_request,
+        });
+        
+        if (res.ok) {
+            const data = await res.json();
+            if (data.errors) {
+                console.log("Validation errors:", data.errors);
+                return;
+            }
+            await dispatch(createQuote(data));
+            console.log("line34",data)
+        } else {
+            console.error("Request failed with status:", res.status, await res.text());
         }
-        await dispatch(createQuote(data))
+    } catch (error) {
+        console.error("Fetch error:", error);
     }
-
-}
+};
 
 export const thunkGetAllQuoteRequest = () => async (dispatch) =>{
 
