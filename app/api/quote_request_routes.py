@@ -60,27 +60,27 @@ def create_new_quote(service_id):
         new_quote = QuoteRequest(
             client_id=current_user.id,
             service_id=service_id,
-            guest_email=form.data('guest_email'),
-            first_name=form.data('first_name'),
-            last_name=form.data('last_name'),
-            phone=form.data('phone'),
-            full_address=form.data('full_address'),
-            apt_suite=form.data('apt_suite'),
-            service_type=form.data('service_type'),
-            description=form.data('description'),
-            quoted_price=form.data('quoted_price'),
+            guest_email=form.data['guest_email'],
+            first_name=form.data['first_name'],
+            last_name=form.data['last_name'],
+            phone=form.data['phone'],
+            full_address=form.data['full_address'],
+            apt_suite=form.data['apt_suite'],
+            service_type=form.data['service_type'],
+            description=form.data['description'],
+            quoted_price=form.data['quoted_price'],
             status='pending',
-            request_date = form.data("request_date"),
-            bedrooms=form.data('bedrooms'),
-            half_baths=form.data('half_baths'),
-            full_baths=form.data('full_baths'),
-            square_footage=form.data('square_footage'),
-            levels=form.data('levels'),
-            carpeted_rooms=form.data('carpeted_rooms'),
-            number_of_people=form.data('number_of_people'),
-            pets=form.data('pets'),
-            number_of_pets=form.data('number_of_pets'),
-            cleaning_frequency=form.data('cleaning_frequency')
+            request_date=form.data['request_date'],
+            bedrooms=form.data['bedrooms'],
+            half_baths=form.data['half_baths'],
+            full_baths=form.data['full_baths'],
+            square_footage=form.data['square_footage'],
+            levels=form.data['levels'],
+            carpeted_rooms=form.data['carpeted_rooms'],
+            number_of_people=form.data['number_of_people'],
+            pets=form.data['pets'],
+            number_of_pets=form.data['number_of_pets'],
+            cleaning_frequency=form.data['cleaning_frequency']
         )
 
         db.session.add(new_quote)
@@ -88,6 +88,7 @@ def create_new_quote(service_id):
 
         return new_quote.to_dict(), 201
     else:
+        print(form.errors)
         return {"errors": form.errors}, 400 
 
 

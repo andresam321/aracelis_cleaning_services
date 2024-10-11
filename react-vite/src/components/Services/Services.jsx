@@ -58,7 +58,7 @@ const Services = () => {
               <p>Estimated Duration: {selectedService.estimated_duration}</p>
               <button className="quote-button"> <OpenModalButton
                 buttonText={"Request A Quote"}
-                modalComponent={<CreateQuote/>}
+                modalComponent={<CreateQuote serviceId={selectedService.id}/>}
             /></button>
             </div>
             {/* <OpenModalButton

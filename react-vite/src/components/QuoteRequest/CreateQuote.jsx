@@ -5,9 +5,10 @@ import { thunkCreateQuote } from '../../redux/quote_request';
 import './CreateQuote.css';
 
 
-const CreateQuote = () => {
+const CreateQuote = ({serviceId}) => {
     const dispatch = useDispatch();
     const { closeModal } = useModal();
+    console.log("line11",serviceId)
 
     const [guest_email, setGuest_email] = useState('');
     const [first_name, setFirst_name] = useState('');
@@ -52,6 +53,8 @@ const CreateQuote = () => {
         formData.append('apt_suite', apt_suite);
         formData.append('service_type', service_type);
         formData.append('description', description);
+        formData.append('request_date', request_date);
+        formData.append('service_id', serviceId);
 
         if (showAdditionalFields) {
         // Include additional fields in formData if revealed
@@ -62,14 +65,14 @@ const CreateQuote = () => {
         formData.append('levels', levels);
         formData.append('carpeted_rooms', carpeted_rooms);
         formData.append('number_of_people', number_of_people);
-        formData.append('pets', pets);
+        formData.append('pets', pets ? 'true' : 'false');
         formData.append('number_of_pets', number_of_pets);
         formData.append('cleaning_frequency', cleaning_frequency);
         }
 
         try {
 
-        await dispatch(thunkCreateQuote(services,formData))
+        await dispatch(thunkCreateQuote(serviceId,formData))
         closeModal();
         
         } catch (error) {
