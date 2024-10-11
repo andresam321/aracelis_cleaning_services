@@ -3,6 +3,7 @@ import LoginFormPage from '../components/LoginFormPage';
 import SignupFormPage from '../components/SignupFormPage';
 import Welcome from '../components/HomePage/Welcome';
 import Services from '../components/Services/Services';
+import ClientQuotes from '../components/QuoteRequest/ClientQuotes';
 import Layout from './Layout';
 
 export const router = createBrowserRouter([
@@ -16,6 +17,10 @@ export const router = createBrowserRouter([
       {
         path: "/Services",
         element: <Services />,
+      },
+      {
+        path: "/MyQuotes",
+        element: <ClientQuotes />,
       },
       {
         path: "login",

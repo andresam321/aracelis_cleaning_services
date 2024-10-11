@@ -1,0 +1,42 @@
+
+.quote-item-container {
+  max-width: 800px;
+  margin: 0 auto;  /* Center align on the page */
+}
+
+/* Style for each individual quote */
+.quote-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for each side */
+.quote-item .left-side,
+.quote-item .right-side {
+  flex: 1 1 45%; /* Takes up roughly half of the width */
+}
+
+/* Style for each line of information */
+.quote-item p {
+  margin: 8px 0;
+}
+
+/* Bold label text */
+.quote-item p strong {
+  font-weight: bold;
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  .quote-item .left-side,
+  .quote-item .right-side {
+    flex: 1 1 100%; /* Stacks on smaller screens */
+  }
+}

@@ -18,7 +18,7 @@ def quote_request_by_client():
     
     quote_list = [quote.to_dict() for quote in quotes]
     
-    return {"quote_list ==>>", quote_list}
+    return {"quote_list": quote_list}
     
 
 
