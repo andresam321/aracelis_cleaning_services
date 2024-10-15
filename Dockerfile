@@ -21,8 +21,7 @@ ENV FLASK_ENV=production
 ENV SECRET_KEY="lkasjdf09ajsdkfljalsiorj12n3490re9485309irefvnu90818734902139489230"
 
 # Remove database migration commands since no database is needed
-# RUN flask db upgrade
-# RUN flask seed all
+
 
 # Run the application with Flask's built-in server for debugging
 ENTRYPOINT ["flask", "run", "--host=0.0.0.0", "--port=80"]
