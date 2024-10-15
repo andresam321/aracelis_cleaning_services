@@ -1,24 +1,28 @@
+# Use Python 3.9 with Alpine as the base image
 FROM python:3.9.18-alpine3.18
 
-RUN apk add build-base
+# Install necessary packages
+RUN apk add --no-cache build-base postgresql-dev gcc python3-dev musl-dev
 
-RUN apk add postgresql-dev gcc python3-dev musl-dev
-
-ARG FLASK_APP
-ARG FLASK_ENV
-ARG DATABASE_URL
-ARG SCHEMA
-ARG SECRET_KEY
-
+# Set the working directory inside the container
 WORKDIR /var/www
 
+# Copy and install dependencies
 COPY requirements.txt .
-
 RUN pip install -r requirements.txt
 RUN pip install psycopg2
 
+# Copy the rest of the application code
 COPY . .
 
-RUN flask db upgrade
-RUN flask seed all
-CMD gunicorn app:app
+# Set environment variables (modify SECRET_KEY as needed)
+ENV FLASK_APP=app
+ENV FLASK_ENV=production
+ENV SECRET_KEY="lkasjdf09ajsdkfljalsiorj12n3490re9485309irefvnu90818734902139489230"
+
+# Commented out database migration commands since no database is needed
+# RUN flask db upgrade
+# RUN flask seed all
+
+# Run the application with Gunicorn
+ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:80", "app:app"]
