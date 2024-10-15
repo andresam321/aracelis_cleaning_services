@@ -15,10 +15,9 @@ RUN pip install psycopg2
 # Copy the rest of the application code
 COPY . .
 
-# Set environment variables (modify SECRET_KEY as needed)
 ENV FLASK_APP=app
 ENV FLASK_ENV=production
-ENV SECRET_KEY="lkasjdf09ajsdkfljalsiorj12n3490re9485309irefvnu90818734902139489230"
+
 
 # Remove database migration commands since no database is needed
 
