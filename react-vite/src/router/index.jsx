@@ -11,25 +11,25 @@ export const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/Home",
+        path: "/",
         element: <Welcome />,
       },
-      {
-        path: "/Services",
-        element: <Services />,
-      },
-      {
-        path: "/MyQuotes",
-        element: <ClientQuotes />,
-      },
-      {
-        path: "login",
-        element: <LoginFormPage />,
-      },
-      {
-        path: "signup",
-        element: <SignupFormPage />,
-      },
+      // {
+      //   path: "/Services",
+      //   element: <Services />,
+      // },
+      // {
+      //   path: "/MyQuotes",
+      //   element: <ClientQuotes />,
+      // },
+      // {
+      //   path: "login",
+      //   element: <LoginFormPage />,
+      // },
+      // {
+      //   path: "signup",
+      //   element: <SignupFormPage />,
+      // },
     ],
   },
 ]);

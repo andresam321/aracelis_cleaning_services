@@ -8,9 +8,9 @@ import "./welcome.css";
 const Welcome = () => {
   const navigate = useNavigate();
 
-  const handleBooking = () => {
-    navigate('/Services'); 
-  }
+  // const handleBooking = () => {
+  //   navigate('/Services'); 
+  // }
 
   const sliderSettings = {
     dots: true,
@@ -32,11 +32,15 @@ const Welcome = () => {
       
       <div className="content">
         <h1>Araceli's Cleaning Services</h1>
-        <p>Your home deserves the best care.</p>
-        <button className="book-now-btn" onClick={handleBooking}>Book Me Now</button>
+        <p>Reliable, professional cleaning for homes, offices, and more in the Bay Area CA.</p>
+        <p>Call or text today to schedule your cleaning!</p>
+        <button className="book-now-btn">Call Now: 510-779-4414</button>
+        <button className="book-now-btn">Email Us: araceliclean@gmail.com</button>
       </div>
     </div>
   );
 }
+
+
 
 export default Welcome;
