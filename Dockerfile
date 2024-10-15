@@ -24,5 +24,5 @@ ENV SECRET_KEY="lkasjdf09ajsdkfljalsiorj12n3490re9485309irefvnu90818734902139489
 # RUN flask db upgrade
 # RUN flask seed all
 
-# Run the application with Gunicorn
-ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:80", "app:app"]
+# Run the application with Flask's built-in server for easier debugging
+ENTRYPOINT ["flask", "run", "--host=0.0.0.0", "--port=80"]

@@ -6,8 +6,7 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ECHO = True
 
-    # Only set DATABASE_URI if DATABASE_URL environment variable is present
+    # Only configure DATABASE_URI if DATABASE_URL environment variable is set
     database_url = os.environ.get('DATABASE_URL')
     if database_url:
         SQLALCHEMY_DATABASE_URI = database_url.replace('postgres://', 'postgresql://', 1)
-    SQLALCHEMY_ECHO = True
