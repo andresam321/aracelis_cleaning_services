@@ -1,9 +1,8 @@
-/* Base styling for the entire document */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden; /* Prevent scrolling */
+  overflow: hidden; 
 }
 
 .welcome-container {
@@ -16,31 +15,28 @@ body, html {
   justify-content: center;
   overflow: hidden;
   background-image: url('https://res.cloudinary.com/djuzk5um3/image/upload/v1726714544/Screenshot_2024-09-17_at_8.07.42_PM_ekmf1w.png');
-  background-size: cover; /* Ensures the image covers the container without distortion */
+  background-size: cover; 
   background-repeat: no-repeat;
-  background-position: center top; /* Adjusts the position to focus on the face */
+  background-position: center top; 
 }
 
-/* Remove the .background-image class as the image is now applied directly to the container */
-
-/* Background image styling */
 .background-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  object-fit: cover; /* Ensures the image covers the container without distortion */
-  z-index: -1; /* Places the image behind all other content */
+  object-fit: cover; 
+  z-index: -1; 
 }
 
-/* Content styling */
+
 .content {
   position: relative;
   text-align: center;
   color: white;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent overlay for better text visibility */
+  background: rgba(0, 0, 0, 0.5); 
   border-radius: 10px;
   max-width: 600px;
   z-index: 1;
@@ -64,10 +60,10 @@ body, html {
   background-color: #e68a00;
 }
 
-/* Media queries for responsiveness */
+
 @media (max-width: 768px) {
   .welcome-container {
-    background-position: center center; /* Recenters for smaller screens */
+    background-position: center center;
   }
 }
 

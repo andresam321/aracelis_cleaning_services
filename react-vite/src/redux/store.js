@@ -7,12 +7,14 @@ import {
 import thunk from "redux-thunk";
 import sessionReducer from "./session";
 import serviceReducer from "./service";
+import emailQuoteReducer from "./email";
 import quoteRequestReducer from "./quote_request";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   serviceReducer:serviceReducer,
-  quoteRequestReducer:quoteRequestReducer
+  quoteRequestReducer:quoteRequestReducer,
+  emailQuoteReducer:emailQuoteReducer
 
 });
 
