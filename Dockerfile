@@ -23,4 +23,4 @@ ENV FLASK_ENV=production
 
 
 # Run the application with Flask's built-in server for debugging
-ENTRYPOINT ["flask", "run", "--host=0.0.0.0", "--port=80"]
+CMD ["gunicorn", "-b", "0.0.0.0:80", "app:app"]
