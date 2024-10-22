@@ -23,4 +23,4 @@ ENV FLASK_ENV=production
 
 
 # Run the application with Flask's built-in server for debugging
-CMD ["gunicorn", "-b", "0.0.0.0:80", "app:app"]
+ENTRYPOINT ["gunicorn", "--access-logfile", "-", "-b", "0.0.0.0:80", "app:app"]

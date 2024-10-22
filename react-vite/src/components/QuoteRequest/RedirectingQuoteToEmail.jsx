@@ -311,7 +311,9 @@ const RedirectingQuoteToEmail = () => {
                 <button type="button" className="toggle-additional-fields" onClick={() => setShowAdditionalFields(!showAdditionalFields)}>
                     {showAdditionalFields ? 'Hide Additional Info' : 'Add More Info'}
                 </button>
-
+                <p className='quote-form'>
+                    By submitting this form, you agree that your data will be used for the sole purpose of providing a quote and scheduling services.
+                </p>
                 <button type="submit" className="submit-quote-button">Create Quote</button>
             </form>
         </div>

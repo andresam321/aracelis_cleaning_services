@@ -90,6 +90,12 @@ textarea {
 .toggle-additional-fields:hover {
     background-color: #444;
 }
+.quote-form p {
+    font-size: 0.75rem;
+    color: #555;
+    margin-top: 10px;
+    text-align: center; 
+}
 
 .additional-fields {
     background-color: #f9f9f9;

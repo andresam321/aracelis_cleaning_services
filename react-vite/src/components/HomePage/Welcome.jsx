@@ -36,17 +36,17 @@ const Welcome = () => {
       <div className="content-welcome">
         <h1>Araceli's Cleaning Services</h1>
         <p>Reliable, professional cleaning for homes, offices, and more in the Bay Area CA.</p>
-        <p>Call or text today to schedule your cleaning!</p>
+        <p>Schedule a cleaning Today!</p>
 
         
-        {/* <button className="book-now-btn"> */}
+        
         <div className="styled-button-wrapper">
           <OpenModalButton
-            buttonText="Request a quote"
+            buttonText="Request a Quote"
             modalComponent={<RedirectingQuoteToEmail />}
           />
         </div>
-        {/* </button> */}
+        
 
         {/* <button className="book-now-btn">Email Us: araceliclean@gmail.com</button> */}
       </div>

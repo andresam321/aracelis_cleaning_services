@@ -81,7 +81,9 @@ const CreateQuote = ({serviceId}) => {
     };
 
     return (
+    <div>
         <form className="quote-form" onSubmit={handleSubmit}>
+            
             <div className="form-row">
                 <label>Email:</label>
                 <input type="email" value={guest_email} onChange={(e) => setGuest_email(e.target.value)} required />
@@ -164,9 +166,10 @@ const CreateQuote = ({serviceId}) => {
                         <label>Pets:</label>
                         <input type="checkbox" checked={pets} onChange={(e) => setPets(e.target.checked)} />
                     </div>
-
+                    <div className=''>
                     <label>Number of Pets:</label>
                     <input type="number" value={number_of_pets} onChange={(e) => setNumber_of_pets(e.target.value)} />
+                    </div>
                 </div>
             )}
 
@@ -176,6 +179,7 @@ const CreateQuote = ({serviceId}) => {
 
             <button type="submit" className="submit-quote-button">Create Quote</button>
         </form>
+</div>
     );
 };
 
