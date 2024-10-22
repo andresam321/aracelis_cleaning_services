@@ -9,7 +9,7 @@ class QuoteRequestForm(FlaskForm):
         phone = StringField('Phone', validators=[DataRequired(), Length(max=15)])
         full_address = StringField('Full Address', validators=[DataRequired(), Length(max=50)])
         apt_suite = StringField('Apt/Suite', validators=[Optional(), Length(max=15)])
-        service_id = IntegerField('Service ID', validators=[DataRequired()])
+        service_id = IntegerField('Service ID')
         service_type = StringField('Service Type', validators=[DataRequired(), Length(max=100)])
         description = TextAreaField('Description', validators=[Optional()])
         quoted_price = FloatField('Quoted Price', validators=[Optional()])

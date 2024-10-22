@@ -17,6 +17,8 @@ email_routes = Blueprint("email", __name__)
 def send_quote():
     form = QuoteRequestForm()
 
+    form["csrf_token"].data = request.cookies["csrf_token"]
+    
     if form.validate_on_submit():
         guest_email = form.data['guest_email']
         first_name = form.data['first_name']
@@ -52,7 +54,7 @@ def send_quote():
         Service Type: {service_type}
         Description: {description}
         Quoted Price: {quoted_price}
-        Request Date: {request_date}  # <-- Here is where the date is included
+        Request Date: {request_date}
         Bedrooms: {bedrooms}
         Half Baths: {half_baths}
         Full Baths: {full_baths}
@@ -71,8 +73,10 @@ def send_quote():
             return jsonify({"message": "Quote request sent successfully!"}), 200
         except Exception as e:
             return jsonify({"message": f"Failed to send quote request: {str(e)}"}), 500
-
-    return jsonify({"message": "Invalid form data"}), 400
+    else:
+        # Print form validation errors for debugging
+        print(form.errors)
+        return jsonify({"message": "Invalid form data", "errors": form.errors}), 400
 
 load_dotenv()
 

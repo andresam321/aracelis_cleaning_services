@@ -15,7 +15,7 @@ class QuoteRequest(db.Model):
     phone = db.Column(db.String(15), nullable=False)
     full_address = db.Column(db.String(50), nullable=False)
     apt_suite = db.Column(db.String(15), nullable=True)
-    service_id = db.Column(db.Integer, db.ForeignKey('services.id'), nullable=False)  
+    service_id = db.Column(db.Integer, db.ForeignKey('services.id'), nullable=True)  
     service_type = db.Column(db.String(100), nullable=False)  
     description = db.Column(db.Text, nullable=True)  
     quoted_price = db.Column(db.Float, nullable=True)  
@@ -32,12 +32,12 @@ class QuoteRequest(db.Model):
     number_of_people = db.Column(db.Integer, nullable=True, default=0)
     pets = db.Column(db.Boolean, nullable=True, default=False)
     number_of_pets = db.Column(db.Integer, nullable=True, default=0)
-    cleaning_frequency = db.Column(db.String(50), nullable=True)  # Weekly, Monthly, One-Time, etc.
+    cleaning_frequency = db.Column(db.String(50), nullable=True)  
 
 
     # Relationships
-    client = db.relationship('User', back_populates='quote_requests')  # Relationship with User
-    service = db.relationship('Service', back_populates='quote_requests')  # Relationship with Service
+    client = db.relationship('User', back_populates='quote_requests')  
+    service = db.relationship('Service', back_populates='quote_requests')  
 
     def to_dict(self):
         return {
