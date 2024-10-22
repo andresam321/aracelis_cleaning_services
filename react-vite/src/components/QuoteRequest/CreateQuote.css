@@ -1,61 +1,15 @@
-
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden; 
-}
-
-.welcome-container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center top;
-}
-
-
-.background-image {
-    position: absolute;
+.form-overlay {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 0; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; 
 }
-
-
-.content {
-    position: relative;
-    text-align: center;
-    color: white;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.5); 
-    border-radius: 10px;
-    max-width: 600px;
-    z-index: 1;
-    box-sizing: border-box;
-}
-
-
-.form-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7); 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100; 
-}
-
 
 .quote-form {
     background-color: white;
@@ -71,11 +25,11 @@ body, html {
     overflow-y: auto; 
 }
 
-
 .form-row {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
+    position: relative; /* Ensure proper error text positioning */
 }
 
 .form-row label {
@@ -92,6 +46,18 @@ body, html {
     box-sizing: border-box;
 }
 
+textarea {
+    min-height: 100px; 
+    resize: vertical; 
+}
+
+.error-text {
+    color: red; /* Error text color */
+    font-size: 0.9rem; /* Slightly smaller font to avoid taking too much space */
+    margin-top: 5px; /* Space between input and error */
+    position: relative; /* Make error text appear below the input field */
+    bottom: 0; /* Remove absolute positioning to prevent it from overlapping */
+}
 
 .submit-quote-button {
     background-color: #ff9900;
@@ -109,7 +75,6 @@ body, html {
     background-color: #e68a00;
 }
 
-/* Toggle button for additional fields */
 .toggle-additional-fields {
     background-color: #666;
     color: white;
@@ -126,7 +91,6 @@ body, html {
     background-color: #444;
 }
 
-/* Additional fields container */
 .additional-fields {
     background-color: #f9f9f9;
     padding: 15px;
@@ -135,20 +99,19 @@ body, html {
     border: 1px solid #ddd;
 }
 
-/* Media queries for mobile responsiveness */
 @media (max-width: 768px) {
     .quote-form {
         width: 90%;
-        max-height: 90vh; /* Make sure the form doesn't overflow the screen */
+        max-height: 90vh; 
     }
 
     .submit-quote-button, .toggle-additional-fields {
         font-size: 1rem;
         padding: 10px 20px;
     }
-    }
+}
 
-    @media (max-width: 480px) {
+@media (max-width: 480px) {
     .quote-form {
         width: 100%;
         padding: 10px;
