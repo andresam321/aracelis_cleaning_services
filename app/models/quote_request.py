@@ -9,11 +9,11 @@ class QuoteRequest(db.Model):
         
     id = db.Column(db.Integer, primary_key=True)
     client_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True) 
+    full_address = db.Column(db.String(50), nullable=False)
     guest_email = db.Column(db.String(255), nullable=True)  
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String(50), nullable=False)
     phone = db.Column(db.String(15), nullable=False)
-    full_address = db.Column(db.String(50), nullable=False)
     apt_suite = db.Column(db.String(15), nullable=True)
     service_id = db.Column(db.Integer, db.ForeignKey('services.id'), nullable=True)  
     service_type = db.Column(db.String(100), nullable=False)  

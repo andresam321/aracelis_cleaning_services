@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useModal } from '../../context/Modal';
 import { thunkCreateQuote } from '../../redux/quote_request';
@@ -33,7 +33,6 @@ const CreateQuote = ({serviceId}) => {
     const [carpeted_rooms, setCarpeted_rooms] = useState(0);
     const [number_of_people, setNumber_of_people] = useState(0);
     const [pets, setPets] = useState(false);
-
 
     // const services = useSelector((state) => state.serviceReducer.allServices.id)
 
